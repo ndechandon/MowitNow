@@ -14,7 +14,6 @@ object EnumOrientation extends Enumeration {
 
   def turnOrientationOnRight(actualOrientation: EnumOrientation.Value): EnumOrientation.Value = {
      EnumOrientation.apply((actualOrientation.id + 1) % EnumOrientation.maxId)
-
   }
 }
 
