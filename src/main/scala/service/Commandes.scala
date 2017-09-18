@@ -16,7 +16,7 @@ object Commandes {
         EnumOrientation.withName(direction)))
       case PatternTerrain(xSize, ySize) => mowerBuilder.withField(Field(xSize.toInt, ySize.toInt))
       case PatternCommande(commande) => mowerBuilder.withorder(commande)
-      case _ =>
+      case _ => println("Ligne invalide")
     }
   }
 
@@ -43,10 +43,10 @@ object Commandes {
 
   private def calculfutherStepDependingOrientation(position: Position): Position = {
     position.orientation match {
-      case EnumOrientation.N => position.increaseX()
-      case EnumOrientation.S => position.decreaseX()
-      case EnumOrientation.E => position.increaseY()
-      case EnumOrientation.W => position.decreaseY()
+      case EnumOrientation.N => position.increaseY()
+      case EnumOrientation.S => position.decreaseY()
+      case EnumOrientation.E => position.increaseX()
+      case EnumOrientation.W => position.decreaseX()
     }
   }
 }

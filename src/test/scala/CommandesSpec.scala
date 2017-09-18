@@ -57,20 +57,20 @@ class CommandesSpec extends FlatSpec with Matchers {
 
   "order A" should "return a new position with x increase" in {
     val position = Position(1,2,EnumOrientation.N)
-    Commandes.calculfutherStep(position,'A') shouldEqual  Position(2,2,EnumOrientation.N)
+    Commandes.calculfutherStep(position,'A') shouldEqual  Position(1,3,EnumOrientation.N)
   }
 
   "order A" should "return a new position with y increase" in {
     val position = Position(1,1,EnumOrientation.E)
-    Commandes.calculfutherStep(position,'A') shouldEqual  Position(1,2,EnumOrientation.E)
+    Commandes.calculfutherStep(position,'A') shouldEqual  Position(2,1,EnumOrientation.E)
   }
   "order A" should "return a new position with x decrease" in {
     val position = Position(1,2,EnumOrientation.S)
-    Commandes.calculfutherStep(position,'A') shouldEqual  Position(0,2,EnumOrientation.S)
+    Commandes.calculfutherStep(position,'A') shouldEqual  Position(1,1,EnumOrientation.S)
   }
   "order A" should "return a new position with y decrease" in {
     val position = Position(1,2,EnumOrientation.W)
-    Commandes.calculfutherStep(position,'A') shouldEqual  Position(1,1,EnumOrientation.W)
+    Commandes.calculfutherStep(position,'A') shouldEqual  Position(0,2,EnumOrientation.W)
   }
 
 }

@@ -22,10 +22,10 @@ class MowerBuilderSpeextends extends FlatSpec with Matchers {
   }
   "A invalide build" should "return mower" in {
     val mowerBuilder= MowerBuilder(Some(Field(4,4)), Some(Position(6,1,EnumOrientation.N)), Some("AAA"))
-     shouldEqual Mower(Field(4,4),Position(1,1,EnumOrientation.N),"AAA")
+    an [CreationImpossibleException] should be thrownBy mowerBuilder.build()
   }
 
 
-  an [CreationImpossibleException] should be thrownBy
+
 
 }
